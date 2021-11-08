@@ -164,16 +164,33 @@ Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.20 - [prefix
 - Edit file `/etc/network/interfaces` seperti pada gambar berikut:
 
   ![03-03](https://user-images.githubusercontent.com/31863229/140718537-a8f636ee-9bd3-4423-aaf5-128920e858fc.PNG)
-- Restart Loguetown dengan klik stop dan start pada node Loguetown.
+- Restart Alabasta dengan klik stop dan start pada node Alabasta.
 - Lakukan testing pada IP dan nameserver.
 
   ![03-05](https://user-images.githubusercontent.com/31863229/140718953-cfea9334-e239-48ad-8ae2-d4dd2eed8f6d.PNG)
 
 ## Soal 4
-
+Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix IP].3.50.
 
 ### Jawaban
+**Pada Jipangu**
+- Edit file `/etc/dhcp/dhcpd.conf` seperti pada gambar berikut:
 
+  ![04-01](https://user-images.githubusercontent.com/31863229/140719944-b74abd60-5460-4bda-b167-4ab563e29a8a.PNG)
+- Restart isc-dhcp-server.
+
+  ```
+  service isc-dhcp-server restart
+  ```
+
+**Pada TottoLand**
+- Edit file `/etc/network/interfaces` seperti pada gambar berikut:
+
+  ![03-03](https://user-images.githubusercontent.com/31863229/140718537-a8f636ee-9bd3-4423-aaf5-128920e858fc.PNG)
+- Restart TottoLand dengan klik stop dan start pada node TottoLand.
+- Lakukan testing pada IP dan nameserver.
+
+  ![04-02](https://user-images.githubusercontent.com/31863229/140719951-3ed4fab7-07c2-4966-a49c-1fceec2a5934.PNG)
 
 ## Soal 5
 

@@ -9,7 +9,7 @@ Repositori Praktikum Jarkom Modul 3
 |05111940000092|Maximilian H M Lingga  |
 
 ## Soal 1
-Luffy bersama Zoro berencana membuat peta tersebut dengan kriteria EniesLobby sebagai DNS Server, Jipangu sebagai DHCP Server, Water7 sebagai Proxy Server.
+Luffy bersama Zoro berencana membuat peta tersebut dengan kriteria EniesLobby sebagai DNS Server, Jipangu sebagai DHCP Server, dan Water7 sebagai Proxy Server.
 
 ### Jawaban
 Membuat topologi sebagai berikut:
@@ -122,7 +122,7 @@ Foosha sebagai DHCP Relay.
   ```
 - Edit file `/etc/default/isc-dhcp-relay` seperti pada gambar berikut:
 
-  ![02-01](https://user-images.githubusercontent.com/31863229/140704116-bbc56e08-a722-460c-96b1-1f22098de936.PNG)
+  ![02-01](https://user-images.githubusercontent.com/31863229/140716872-dfb89d0f-bcf6-4b3c-abd1-6730ad0d0e02.PNG)
 - Restart isc-dhcp-relay.
 
   ```
@@ -130,10 +130,44 @@ Foosha sebagai DHCP Relay.
   ```
 
 ## Soal 3
-
+Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.20 - [prefix IP].1.99 dan [prefix IP].1.150 - [prefix IP].1.169.
 
 ### Jawaban
+**Pada Jipangu**
+- Install aplikasi isc-dhcp-server.
 
+  ```
+  apt-get install isc-dhcp-server -y
+  ```
+- Edit file `/etc/default/isc-dhcp-server` seperti pada gambar berikut:
+
+  ![03-01](https://user-images.githubusercontent.com/31863229/140718528-90cb2cce-6b39-4cbd-a561-9d8e23c8520e.PNG)
+- Edit file `/etc/dhcp/dhcpd.conf` seperti pada gambar berikut:
+
+  ![03-02](https://user-images.githubusercontent.com/31863229/140718533-b0a3deb9-19de-4184-a776-16f855ec137e.PNG)
+- Restart isc-dhcp-server.
+
+  ```
+  service isc-dhcp-server restart
+  ```
+
+**Pada Loguetown**
+- Edit file `/etc/network/interfaces` seperti pada gambar berikut:
+
+  ![03-03](https://user-images.githubusercontent.com/31863229/140718537-a8f636ee-9bd3-4423-aaf5-128920e858fc.PNG)
+- Restart Loguetown dengan klik stop dan start pada node Loguetown.
+- Lakukan testing pada IP dan nameserver.
+
+  ![03-04](https://user-images.githubusercontent.com/31863229/140718543-6a81d979-79ff-471f-835b-309a7afe4737.PNG)
+
+**Pada Alabasta**
+- Edit file `/etc/network/interfaces` seperti pada gambar berikut:
+
+  ![03-03](https://user-images.githubusercontent.com/31863229/140718537-a8f636ee-9bd3-4423-aaf5-128920e858fc.PNG)
+- Restart Loguetown dengan klik stop dan start pada node Loguetown.
+- Lakukan testing pada IP dan nameserver.
+
+  ![03-05](https://user-images.githubusercontent.com/31863229/140718953-cfea9334-e239-48ad-8ae2-d4dd2eed8f6d.PNG)
 
 ## Soal 4
 

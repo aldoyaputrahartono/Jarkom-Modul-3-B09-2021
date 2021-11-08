@@ -334,10 +334,11 @@ Pada Loguetown, proxy harus bisa diakses dengan nama `jualbelikapal.yyy.com` den
   ![08-05](https://user-images.githubusercontent.com/31863229/140797638-cfef796f-6d9e-4055-819c-2e140002b613.PNG)
 
 **Pada Water7**
-- Install aplikasi squid.
+- Install aplikasi squid dan apache2-utils.
 
   ```
   apt-get install squid -y
+  apt-get install apache2-utils -y
   ```
 - Backup terlebih dahulu file konfigurasi default yang disediakan Squid.
 
@@ -374,10 +375,35 @@ Pada Loguetown, proxy harus bisa diakses dengan nama `jualbelikapal.yyy.com` den
   ![08-07](https://user-images.githubusercontent.com/31863229/140797644-7c3a18c5-a614-4471-b225-5544745e9220.PNG)
 
 ## Soal 9
-
+Agar transaksi jual beli lebih aman dan pengguna website ada dua orang, proxy dipasang autentikasi user proxy dengan enkripsi MD5 dengan dua username, yaitu `luffybelikapalyyy` dengan password `luffy_yyy` dan `zorobelikapalyyy` dengan password `zoro_yyy`.
 
 ### Jawaban
+**Pada Water7**
+- Jalankan perintah berikut untuk membuat akun autentikasi baru dengan username `luffybelikapalB09`. Kita akan diminta untuk memasukkan password baru dan confirm password tersebut diisi `luffy_B09`.
 
+  ```
+  htpasswd -cm /etc/squid/passwd luffybelikapalB09
+  ```
+- Jalankan perintah berikut untuk membuat akun autentikasi baru dengan username `zorobelikapalB09`. Kita akan diminta untuk memasukkan password baru dan confirm password tersebut diisi `zoro_B09`.
+
+  ```
+  htpasswd -m /etc/squid/passwd zorobelikapalB09
+  ```
+- Edit file `/etc/squid/squid.conf` seperti pada gambar berikut:
+
+  ![09-01](https://user-images.githubusercontent.com/31863229/140799670-82ff1946-ffef-4acf-9e68-3dccf798c1d0.PNG)
+- Restart squid.
+
+  ```
+  service squid restart
+  ```
+
+**Pada Loguetown**
+- Buka `jualbelikapal.B09.com:5000` menggunakan lynx.
+
+  ![09-02](https://user-images.githubusercontent.com/31863229/140799675-bb858219-0201-4d42-a721-4a7840919cb4.PNG)
+  ![09-03](https://user-images.githubusercontent.com/31863229/140799677-211b50a7-78e2-4ef5-aa1f-62e135c9c9f0.PNG)
+  ![08-07](https://user-images.githubusercontent.com/31863229/140797644-7c3a18c5-a614-4471-b225-5544745e9220.PNG)
 
 ## Soal 10
 

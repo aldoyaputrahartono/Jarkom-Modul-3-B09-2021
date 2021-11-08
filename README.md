@@ -406,10 +406,36 @@ Agar transaksi jual beli lebih aman dan pengguna website ada dua orang, proxy di
   ![08-07](https://user-images.githubusercontent.com/31863229/140797644-7c3a18c5-a614-4471-b225-5544745e9220.PNG)
 
 ## Soal 10
-
+Transaksi jual beli tidak dilakukan setiap hari, oleh karena itu akses internet dibatasi hanya dapat diakses setiap hari Senin-Kamis pukul 07.00-11.00 dan setiap hari Selasa-Jum’at pukul 17.00-03.00 keesokan harinya (sampai Sabtu pukul 03.00).
 
 ### Jawaban
+**Pada Water7**
+- Mendefinisikan jadwal yang tidak restricted sebagai berikut:
 
+  ```
+  Senin		07:00 - 11:00
+  Selasa		07:00 - 11:00, 17:00 - 23:59
+  Rabu		00:00 - 03:00, 07:00 - 11:00, 17:00 - 23:59
+  Kamis		00:00 - 03:00, 07:00 - 11:00, 17:00 - 23:59
+  Jumat		00:00 - 03:00, 17:00 - 23:59
+  Sabtu		00:00 - 03:00
+  ```
+- Buat file baru bernama `acl.conf` di folder squid.
+
+  ```
+  nano /etc/squid/acl.conf
+  ```
+- Edit file `/etc/squid/acl.conf` seperti pada gambar berikut:
+
+  ![10-01](https://user-images.githubusercontent.com/31863229/140803916-825ec305-e62b-4513-a967-0d856884c78c.PNG)
+- Edit file `/etc/squid/squid.conf` seperti pada gambar berikut:
+
+  ![10-02](https://user-images.githubusercontent.com/31863229/140803919-c9f52b4b-4d77-4869-9a26-a6494f4f624e.PNG)
+- Restart squid.
+
+  ```
+  service squid restart
+  ```
 
 ## Soal 11
 

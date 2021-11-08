@@ -557,7 +557,10 @@ Sedangkan, Zoro yang sangat bersemangat untuk mencari harta karun, sehingga kece
   ![13-01](https://user-images.githubusercontent.com/31863229/140817737-32d24333-5c32-44ac-b18a-15b383cc2c79.PNG)
 
 ## Kendala
-
+1. Sedikit kesulitan mengenai DHCP Relay pada soal 2 karena tidak ada di modul.
+2. Sedikit kesulitan pada soal 8 karena hasil lynx tidak dapat tampil. Solusinya menambahkan IP EniesLobby pada file `/etc/resolv.conf` di Water7.
+3. Kesulitan pada soal 10 untuk mengecek pembatasan waktu akses.
+4. Kesulitan pada soal 12 karena speedtest terkendala proxy (http error 407: proxy authentication required).
 
 ## Pembagian Tugas
 |Nama                   |Soal  |

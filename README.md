@@ -271,10 +271,107 @@ Luffy dan Zoro berencana menjadikan Skypie sebagai server untuk jual beli kapal 
   ![07-02](https://user-images.githubusercontent.com/31863229/140727166-a97b3d0a-8226-4eec-8d6b-c50bbdf4102d.PNG)
 
 ## Soal 8
-
+Pada Loguetown, proxy harus bisa diakses dengan nama `jualbelikapal.yyy.com` dengan port yang digunakan adalah 5000.
 
 ### Jawaban
+**Pada EniesLobby**
+- Edit file `/etc/bind/named.conf.local` seperti pada gambar berikut:
 
+  ![08-01](https://user-images.githubusercontent.com/31863229/140797619-e89b875a-d7fb-4aa4-af76-73ecc19bdd67.PNG)
+- Buat folder `modul3` di dalam `/etc/bind`.
+
+  ```
+  mkdir /etc/bind/modul3
+  ```
+- Copykan file `db.local` pada path `/etc/bind` ke dalam folder `modul3` yang baru saja dibuat dan ubah namanya menjadi `jualbelikapal.B09.com`.
+
+  ```
+  cp /etc/bind/db.local /etc/bind/modul3/jualbelikapal.B09.com
+  ```
+- Edit file `/etc/bind/modul3/jualbelikapal.B09.com` seperti pada gambar berikut:
+
+  ![08-02](https://user-images.githubusercontent.com/31863229/140797631-bfc53c55-bf04-4f90-870e-d46c70c2745a.PNG)
+- Restart bind9.
+
+  ```
+  service bind9 restart
+  ```
+
+**Pada Skypie**
+- Install aplikasi apache, PHP, dan libapache2-mod-php7.0.
+
+  ```
+  apt-get install apache2 -y
+  apt-get install php -y
+  apt-get install libapache2-mod-php7.0 -y
+  ```
+- Pindah ke directory `/etc/apache2/sites-available`.
+- Copy file `000-default.conf` menjadi file `jualbelikapal.B09.com.conf`.
+- Edit file `jualbelikapal.B09.com.conf` seperti pada gambar berikut:
+
+  ![08-03](https://user-images.githubusercontent.com/31863229/140797633-ee316577-487f-4e49-aed0-6125e6fa575c.PNG)
+- Edit file `/etc/apache2/ports.conf` untuk mengaktifkan port 5000 seperti pada gambar berikut:
+
+  ![08-04](https://user-images.githubusercontent.com/31863229/140797636-281db610-e474-475f-ba34-22de36af64a2.PNG)
+- Aktifkan konfigurasi jualbelikapal.B09.com.
+
+  ```
+  a2ensite jualbelikapal.B09.com
+  ```
+- Restart apache.
+
+  ```
+  service apache2 restart
+  ```
+- Pindah ke directory `/var/www`.
+- Buatlah sebuah directory baru di dalam `/var/www` dengan nama `jualbelikapal.B09.com`.
+
+  ```
+  mkdir jualbelikapal.B09.com
+  ```
+- Masuk ke directory `/var/www/jualbelikapal.B09.com` dan buat file `index.php`.
+
+  ![08-05](https://user-images.githubusercontent.com/31863229/140797638-cfef796f-6d9e-4055-819c-2e140002b613.PNG)
+
+**Pada Water7**
+- Install aplikasi squid.
+
+  ```
+  apt-get install squid -y
+  ```
+- Backup terlebih dahulu file konfigurasi default yang disediakan Squid.
+
+  ```
+  mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
+  ```
+- Buat konfigurasi Squid baru.
+
+  ```
+  nano /etc/squid/squid.conf
+  ```
+- Edit file `/etc/squid/squid.conf` seperti pada gambar berikut:
+
+  ![08-06](https://user-images.githubusercontent.com/31863229/140797642-dfc9c00c-a440-4abb-a883-d4a9fd4e2f65.PNG)
+- Restart squid.
+
+  ```
+  service squid restart
+  ```
+
+**Pada Loguetown**
+- Install aplikasi lynx.
+
+  ```
+  apt-get install lynx -y
+  ```
+- Aktifkan proxy dengan syntax berikut:
+
+  ```
+  export http_proxy="http://192.181.2.3:8080"
+  ```
+- Buka `jualbelikapal.B09.com:5000` menggunakan lynx.
+
+  ![08-07](https://user-images.githubusercontent.com/31863229/140797644-7c3a18c5-a614-4471-b225-5544745e9220.PNG)
 
 ## Soal 9
 

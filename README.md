@@ -514,16 +514,47 @@ Agar transaksi bisa lebih fokus berjalan, maka dilakukan redirect website agar m
   ![11-06](https://user-images.githubusercontent.com/31863229/140810718-9175a128-fb96-4558-a5f4-b8f66c92014a.PNG)
 
 ## Soal 12
-
+Saatnya berlayar! Luffy dan Zoro akhirnya memutuskan untuk berlayar untuk mencari harta karun di `super.franky.yyy.com`. Tugas pencarian dibagi menjadi dua misi, Luffy bertugas untuk mendapatkan gambar (.png, .jpg), sedangkan Zoro mendapatkan sisanya. Karena Luffy orangnya sangat teliti untuk mencari harta karun, ketika ia berhasil mendapatkan gambar, ia mendapatkan gambar dan melihatnya dengan kecepatan 10 kbps.
 
 ### Jawaban
+**Pada Water7**
+- Buat file bernama `file_download` di folder squid.
+- Tambahkan format gambar yang akan dibatasi kecepatannya pada `/etc/squid/file_download`.
 
+  ```
+  \.jpg$
+  \.png$
+  ```
+- Buat file bernama `acl-bandwidth.conf` di folder squid.
+- Edit file `/etc/squid/acl-bandwidth.conf` seperti pada gambar berikut:
+
+  ![12-01](https://user-images.githubusercontent.com/31863229/140817038-d1f3eef1-dbc2-4c77-a123-a9c899af8d29.PNG)
+- Edit file `/etc/squid/squid.conf` seperti pada gambar berikut:
+
+  ![12-02](https://user-images.githubusercontent.com/31863229/140817047-aeb3fc8d-d93f-45e5-b98b-ba65db5ef5b5.PNG)
+- Restart squid.
+
+  ```
+  service squid restart
+  ```
+
+**Pada Loguetown**
+- Install aplikasi speedtest-cli.
+
+  ```
+  apt install speedtest-cli -y
+  ```
+- Jalankan script `export PYTHONHTTPSVERIFY=0` untuk menonaktifkan verifikasi certificate pada saat menjalankan script Python.
+- Eksekusi speed test dengan perintah `speedtest`.
 
 ## Soal 13
-
+Sedangkan, Zoro yang sangat bersemangat untuk mencari harta karun, sehingga kecepatan kapal Zoro tidak dibatasi ketika sudah mendapatkan harta yang diinginkannya.
 
 ### Jawaban
+**Pada Loguetown**
+- Eksekusi speed test dengan perintah `speedtest`.
 
+  ![13-01](https://user-images.githubusercontent.com/31863229/140817737-32d24333-5c32-44ac-b18a-15b383cc2c79.PNG)
 
 ## Kendala
 

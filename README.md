@@ -248,10 +248,27 @@ Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch1 
   ```
 
 ## Soal 7
-
+Luffy dan Zoro berencana menjadikan Skypie sebagai server untuk jual beli kapal yang dimilikinya dengan alamat IP yang tetap dengan IP [prefix IP].3.69.
 
 ### Jawaban
+**Pada Jipangu**
+- Edit file `/etc/dhcp/dhcpd.conf` seperti pada gambar berikut:
+  
+  ![04-01](https://user-images.githubusercontent.com/31863229/140719944-b74abd60-5460-4bda-b167-4ab563e29a8a.PNG)
+- Restart isc-dhcp-server.
 
+  ```
+  service isc-dhcp-server restart
+  ```
+
+**Pada Skypie**
+- Edit file `/etc/network/interfaces` seperti pada gambar berikut:
+
+  ![07-01](https://user-images.githubusercontent.com/31863229/140727156-ee850176-352b-48f6-b074-24d3ccb2afe7.PNG)
+- Restart Skypie dengan klik stop dan start pada node Skypie.
+- Lakukan testing pada IP dan nameserver.
+
+  ![07-02](https://user-images.githubusercontent.com/31863229/140727166-a97b3d0a-8226-4eec-8d6b-c50bbdf4102d.PNG)
 
 ## Soal 8
 

@@ -111,10 +111,23 @@ Restart semua node dan coba `ping google.com`. Berikut bukti `Loguetown` dapat m
 ![01-02](https://user-images.githubusercontent.com/31863229/138602128-fdeaf005-5b76-4cbf-b324-8701cba646af.PNG)
 
 ## Soal 2
-
+Foosha sebagai DHCP Relay.
 
 ### Jawaban
+**Pada Foosha**
+- Install aplikasi isc-dhcp-relay.
 
+  ```
+  apt-get install isc-dhcp-relay -y
+  ```
+- Edit file `/etc/default/isc-dhcp-relay` seperti pada gambar berikut:
+
+  ![02-01](https://user-images.githubusercontent.com/31863229/140704116-bbc56e08-a722-460c-96b1-1f22098de936.PNG)
+- Restart isc-dhcp-relay.
+
+  ```
+  service isc-dhcp-relay restart
+  ```
 
 ## Soal 3
 

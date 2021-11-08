@@ -353,6 +353,7 @@ Pada Loguetown, proxy harus bisa diakses dengan nama `jualbelikapal.yyy.com` den
 - Edit file `/etc/squid/squid.conf` seperti pada gambar berikut:
 
   ![08-06](https://user-images.githubusercontent.com/31863229/140797642-dfc9c00c-a440-4abb-a883-d4a9fd4e2f65.PNG)
+- Tambahkan IP EniesLobby (192.181.2.2) pada file `/etc/resolv.conf`.
 - Restart squid.
 
   ```
@@ -438,10 +439,79 @@ Transaksi jual beli tidak dilakukan setiap hari, oleh karena itu akses internet 
   ```
 
 ## Soal 11
-
+Agar transaksi bisa lebih fokus berjalan, maka dilakukan redirect website agar mudah mengingat website transaksi jual beli kapal. Setiap mengakses `google.com`, akan diredirect menuju `super.franky.yyy.com` dengan website yang sama pada soal shift modul 2. Web server `super.franky.yyy.com` berada pada node Skypie.
 
 ### Jawaban
+**Pada EniesLobby**
+- Edit file `/etc/bind/named.conf.local` seperti pada gambar berikut:
 
+  ![11-01](https://user-images.githubusercontent.com/31863229/140810695-adac3260-5da3-44de-9475-b53d9946eff5.PNG)
+- Buat folder `kaizoku` di dalam `/etc/bind`.
+
+  ```
+  mkdir /etc/bind/kaizoku
+  ```
+- Copykan file `db.local` pada path `/etc/bind` ke dalam folder `kaizoku` yang baru saja dibuat dan ubah namanya menjadi `super.franky.B09.com`.
+
+  ```
+  cp /etc/bind/db.local /etc/bind/kaizoku/super.franky.B09.com
+  ```
+- Edit file `/etc/bind/kaizoku/super.franky.B09.com` seperti pada gambar berikut:
+
+  ![11-02](https://user-images.githubusercontent.com/31863229/140810704-58d4ac56-1320-478b-97ad-814f40a1e2a5.PNG)
+- Restart bind9.
+
+  ```
+  service bind9 restart
+  ```
+
+**Pada Skypie**
+- Pindah ke directory `/etc/apache2/sites-available`.
+- Copy file `000-default.conf` menjadi file `super.franky.B09.com.conf`.
+- Edit file `super.franky.B09.com.conf` seperti pada gambar berikut:
+
+  ![11-03](https://user-images.githubusercontent.com/31863229/140810707-fb849aa4-9180-4b03-b71c-96e1ad2f1099.PNG)
+- Aktifkan konfigurasi super.franky.B09.com.
+
+  ```
+  a2ensite super.franky.B09.com
+  ```
+- Restart apache.
+
+  ```
+  service apache2 restart
+  ```
+- Pindah ke directory `/var/www`.
+- Download file zip menggunakan `wget`.
+
+  ```
+  wget https://github.com/FeinardSlim/Praktikum-Modul-2-Jarkom/raw/main/super.franky.zip
+  ```
+- Lakukan unzip.
+
+  ```
+  unzip super.franky.zip
+  ```
+- Rename folder `super.franky` menjadi `super.franky.B09.com` dan terdapat isi file seperti pada gambar berikut:
+
+  ![11-04](https://user-images.githubusercontent.com/31863229/140810714-d3d876f9-d957-4d56-9ca9-d015a3554a22.PNG)
+
+**Pada Water7**
+- Buat file bernama `restrict-sites.acl` di folder squid.
+- Tambahkan alamat url `google.com` yang akan diredirect.
+- Edit file `/etc/squid/squid.conf` seperti pada gambar berikut:
+
+  ![11-05](https://user-images.githubusercontent.com/31863229/140810715-bc5de660-2399-4f2b-9708-f8331acfeb8a.PNG)
+- Restart squid.
+
+  ```
+  service squid restart
+  ```
+
+**Pada Loguetown**
+- Buka `google.com` menggunakan lynx.
+
+  ![11-06](https://user-images.githubusercontent.com/31863229/140810718-9175a128-fb96-4558-a5f4-b8f66c92014a.PNG)
 
 ## Soal 12
 

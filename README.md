@@ -236,7 +236,7 @@ Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch1 
 
 ### Jawaban
 **Pada Jipangu**
-- Edit file `/etc/dhcp/dhcpd.conf` seperti pada gambar berikut:
+- Edit file `/etc/dhcp/dhcpd.conf` pada bagian `default-lease-time` dan `max-lease-time` seperti pada gambar berikut:
 
   ![03-02](https://user-images.githubusercontent.com/31863229/140718533-b0a3deb9-19de-4184-a776-16f855ec137e.PNG)
   

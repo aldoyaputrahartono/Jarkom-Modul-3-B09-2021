@@ -193,10 +193,43 @@ Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix
   ![04-02](https://user-images.githubusercontent.com/31863229/140719951-3ed4fab7-07c2-4966-a49c-1fceec2a5934.PNG)
 
 ## Soal 5
-
+Client mendapatkan DNS dari EniesLobby dan client dapat terhubung dengan internet melalui DNS tersebut.
 
 ### Jawaban
+**Pada EniesLobby**
+- Install aplikasi bind9.
 
+  ```
+  apt-get install bind9 -y
+  ```
+- Edit file `/etc/bind/named.conf.options` seperti pada gambar berikut:
+
+  ![05-01](https://user-images.githubusercontent.com/31863229/140724873-b4a09064-8198-48c9-a18d-e501739872ba.PNG)
+- Restart bind9.
+
+  ```
+  service bind9 restart
+  ```
+
+**Pada Loguetown**
+- Lakukan ping `google.com`.
+
+  ![05-02](https://user-images.githubusercontent.com/31863229/140724881-a4b97d8d-dfe9-400f-b41e-c24a8ff762bf.PNG)
+
+**Pada Alabasta**
+- Lakukan ping `google.com`.
+
+  ![05-03](https://user-images.githubusercontent.com/31863229/140724883-5ea80709-8bfd-4701-a852-ee3f67ab4671.PNG)
+
+**Pada Skypie**
+- Lakukan ping `google.com`.
+
+  ![05-04](https://user-images.githubusercontent.com/31863229/140724887-a509b39f-f006-4595-8cc7-88cce9038d13.PNG)
+
+**Pada TottoLand**
+- Lakukan ping `google.com`.
+
+  ![05-05](https://user-images.githubusercontent.com/31863229/140724891-80d278a9-893f-4693-ab40-2b55ea662d4a.PNG)
 
 ## Soal 6
 

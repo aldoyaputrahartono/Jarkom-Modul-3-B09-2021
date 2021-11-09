@@ -333,7 +333,7 @@ Agar transaksi jual beli lebih aman dan pengguna website ada dua orang, proxy di
   ```
 - Edit file `/etc/squid/squid.conf` seperti pada gambar berikut:
 
-  ![09-01](https://user-images.githubusercontent.com/31863229/140799670-82ff1946-ffef-4acf-9e68-3dccf798c1d0.PNG)
+  ![09-01](https://user-images.githubusercontent.com/31863229/140911328-67b559ca-9606-4291-9430-ea2d4975d0cf.PNG)
 - Restart squid.
 
   ```
@@ -341,11 +341,13 @@ Agar transaksi jual beli lebih aman dan pengguna website ada dua orang, proxy di
   ```
 
 **Pada Loguetown**
-- Buka `jualbelikapal.B09.com:5000` menggunakan lynx.
+- Buka `http://its.ac.id` menggunakan lynx.
 
-  ![09-02](https://user-images.githubusercontent.com/31863229/140799675-bb858219-0201-4d42-a721-4a7840919cb4.PNG)
-  ![09-03](https://user-images.githubusercontent.com/31863229/140799677-211b50a7-78e2-4ef5-aa1f-62e135c9c9f0.PNG)
-  ![08-07](https://user-images.githubusercontent.com/31863229/140797644-7c3a18c5-a614-4471-b225-5544745e9220.PNG)
+  ![09-02](https://user-images.githubusercontent.com/31863229/140911334-5b7303b0-3aa8-41eb-bd29-80d9151cbfe5.PNG)
+  ![09-03](https://user-images.githubusercontent.com/31863229/140911338-6ddca2e6-fdef-460f-aab4-d51c0dc8d0cf.PNG)
+  ![09-04](https://user-images.githubusercontent.com/31863229/140911341-413a4471-c056-453a-89d5-62c364fa1302.PNG)
+  ![09-05](https://user-images.githubusercontent.com/31863229/140911344-107e428e-5dd3-4344-959b-1f52d83d1a47.PNG)
+  ![08-02](https://user-images.githubusercontent.com/31863229/140910444-3451d55c-9fa1-4192-815f-dfd53a7dc38a.PNG)
 
 ## Soal 10
 Transaksi jual beli tidak dilakukan setiap hari, oleh karena itu akses internet dibatasi hanya dapat diakses setiap hari Senin-Kamis pukul 07.00-11.00 dan setiap hari Selasa-Jum’at pukul 17.00-03.00 keesokan harinya (sampai Sabtu pukul 03.00).

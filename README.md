@@ -423,7 +423,7 @@ Agar transaksi bisa lebih fokus berjalan, maka dilakukan redirect website agar m
 **Pada EniesLobby**
 - Edit file `/etc/bind/named.conf.local` seperti pada gambar berikut:
 
-  ![11-01](https://user-images.githubusercontent.com/31863229/140810695-adac3260-5da3-44de-9475-b53d9946eff5.PNG)
+  ![11-01](https://user-images.githubusercontent.com/31863229/140916072-a92740e7-7012-477a-b983-a21db0d4750a.PNG)
 - Buat folder `kaizoku` di dalam `/etc/bind`.
 
   ```
@@ -486,7 +486,7 @@ Agar transaksi bisa lebih fokus berjalan, maka dilakukan redirect website agar m
 - Tambahkan alamat url `google.com` yang akan diredirect.
 - Edit file `/etc/squid/squid.conf` seperti pada gambar berikut:
 
-  ![11-05](https://user-images.githubusercontent.com/31863229/140810715-bc5de660-2399-4f2b-9708-f8331acfeb8a.PNG)
+  ![11-05](https://user-images.githubusercontent.com/31863229/140916079-3538c743-4dac-47ba-85d8-1138c2aee825.PNG)
 - Restart squid.
 
   ```

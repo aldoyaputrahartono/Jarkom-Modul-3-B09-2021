@@ -503,20 +503,13 @@ Saatnya berlayar! Luffy dan Zoro akhirnya memutuskan untuk berlayar untuk mencar
 
 ### Jawaban
 **Pada Water7**
-- Buat file bernama `file_download` di folder squid.
-- Tambahkan format gambar yang akan dibatasi kecepatannya pada `/etc/squid/file_download`.
-
-  ```
-  \.jpg$
-  \.png$
-  ```
 - Buat file bernama `acl-bandwidth.conf` di folder squid.
 - Edit file `/etc/squid/acl-bandwidth.conf` seperti pada gambar berikut:
 
-  ![12-01](https://user-images.githubusercontent.com/31863229/140817038-d1f3eef1-dbc2-4c77-a123-a9c899af8d29.PNG)
+  ![12-01](https://user-images.githubusercontent.com/31863229/140918814-7e98292a-1f46-41d5-8d6a-a087b534e552.PNG)
 - Edit file `/etc/squid/squid.conf` seperti pada gambar berikut:
 
-  ![12-02](https://user-images.githubusercontent.com/31863229/140817047-aeb3fc8d-d93f-45e5-b98b-ba65db5ef5b5.PNG)
+  ![12-02](https://user-images.githubusercontent.com/31863229/140918821-15ab7beb-bb29-410b-9a98-48c6208903a8.PNG)
 - Restart squid.
 
   ```
@@ -524,22 +517,18 @@ Saatnya berlayar! Luffy dan Zoro akhirnya memutuskan untuk berlayar untuk mencar
   ```
 
 **Pada Loguetown**
-- Install aplikasi speedtest-cli.
+- Buka `super.franky.B09.com/public/images/franky.png` menggunakan lynx dengan akun Luffy.
 
-  ```
-  apt install speedtest-cli -y
-  ```
-- Jalankan script `export PYTHONHTTPSVERIFY=0` untuk menonaktifkan verifikasi certificate pada saat menjalankan script Python.
-- Eksekusi speed test dengan perintah `speedtest`.
+  ![12-03](https://user-images.githubusercontent.com/31863229/140919473-afdb9a3a-a998-4d57-a198-f33c6ee02839.PNG)
 
 ## Soal 13
 Sedangkan, Zoro yang sangat bersemangat untuk mencari harta karun, sehingga kecepatan kapal Zoro tidak dibatasi ketika sudah mendapatkan harta yang diinginkannya.
 
 ### Jawaban
 **Pada Loguetown**
-- Eksekusi speed test dengan perintah `speedtest`.
+- Buka `super.franky.B09.com/public/images/stockphotorandomfran.woi` menggunakan lynx dengan akun Zoro.
 
-  ![13-01](https://user-images.githubusercontent.com/31863229/140817737-32d24333-5c32-44ac-b18a-15b383cc2c79.PNG)
+  ![13-01](https://user-images.githubusercontent.com/31863229/140919478-3ed92eb2-482f-4081-b05d-61f9384257e7.PNG)
 
 ## Kendala
 1. Sedikit kesulitan mengenai DHCP Relay pada soal 2 karena tidak ada di modul.

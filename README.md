@@ -144,7 +144,7 @@ Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.20 - [prefix
   ![03-01](https://user-images.githubusercontent.com/31863229/140718528-90cb2cce-6b39-4cbd-a561-9d8e23c8520e.PNG)
 - Edit file `/etc/dhcp/dhcpd.conf` seperti pada gambar berikut:
 
-  ![03-02](https://user-images.githubusercontent.com/31863229/140718533-b0a3deb9-19de-4184-a776-16f855ec137e.PNG)
+  ![03-02](https://user-images.githubusercontent.com/31863229/140905888-4ff3871a-d81c-46c7-82c1-20177952a5e8.PNG)
 - Restart isc-dhcp-server.
 
   ```
@@ -158,7 +158,7 @@ Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.20 - [prefix
 - Restart Loguetown dengan klik stop dan start pada node Loguetown.
 - Lakukan testing pada IP dan nameserver.
 
-  ![03-04](https://user-images.githubusercontent.com/31863229/140718543-6a81d979-79ff-471f-835b-309a7afe4737.PNG)
+  ![03-04](https://user-images.githubusercontent.com/31863229/140905902-162eb453-9291-443b-a9b4-e20e6fffb5ad.PNG)
 
 **Pada Alabasta**
 - Edit file `/etc/network/interfaces` seperti pada gambar berikut:
@@ -167,7 +167,7 @@ Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.20 - [prefix
 - Restart Alabasta dengan klik stop dan start pada node Alabasta.
 - Lakukan testing pada IP dan nameserver.
 
-  ![03-05](https://user-images.githubusercontent.com/31863229/140718953-cfea9334-e239-48ad-8ae2-d4dd2eed8f6d.PNG)
+  ![03-05](https://user-images.githubusercontent.com/31863229/140905905-58b843fa-f3e5-4254-84d5-31dd83d1091f.PNG)
 
 ## Soal 4
 Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix IP].3.50.
@@ -176,7 +176,7 @@ Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix
 **Pada Jipangu**
 - Edit file `/etc/dhcp/dhcpd.conf` seperti pada gambar berikut:
 
-  ![04-01](https://user-images.githubusercontent.com/31863229/140719944-b74abd60-5460-4bda-b167-4ab563e29a8a.PNG)
+  ![04-01](https://user-images.githubusercontent.com/31863229/140906280-9ca9166d-bdac-430c-9657-ec2f6eb80e33.PNG)
 - Restart isc-dhcp-server.
 
   ```
@@ -190,7 +190,7 @@ Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix
 - Restart TottoLand dengan klik stop dan start pada node TottoLand.
 - Lakukan testing pada IP dan nameserver.
 
-  ![04-02](https://user-images.githubusercontent.com/31863229/140719951-3ed4fab7-07c2-4966-a49c-1fceec2a5934.PNG)
+  ![04-02](https://user-images.githubusercontent.com/31863229/140906285-c2f44252-7546-4b37-89ed-274608ea0062.PNG)
 
 ## Soal 5
 Client mendapatkan DNS dari EniesLobby dan client dapat terhubung dengan internet melalui DNS tersebut.

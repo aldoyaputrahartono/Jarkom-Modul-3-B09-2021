@@ -354,15 +354,34 @@ Transaksi jual beli tidak dilakukan setiap hari, oleh karena itu akses internet 
 
 ### Jawaban
 **Pada Water7**
-- Mendefinisikan jadwal yang tidak restricted sebagai berikut:
+- Mendefinisikan jadwal sebagai berikut:
 
   ```
+  Jadwal yang diperbolehkan
   Senin		07:00 - 11:00
   Selasa		07:00 - 11:00, 17:00 - 23:59
   Rabu		00:00 - 03:00, 07:00 - 11:00, 17:00 - 23:59
   Kamis		00:00 - 03:00, 07:00 - 11:00, 17:00 - 23:59
   Jumat		00:00 - 03:00, 17:00 - 23:59
   Sabtu		00:00 - 03:00
+  
+  Jadwal yang tidak diperbolehkan
+  Minggu		00:00 - 23:59
+  Senin		00:00 - 06:59, 11:01 - 23:59
+  Selasa		00:00 - 06:59, 11:01 - 16:59
+  Rabu		03:01 - 06:59, 11:01 - 16:59
+  Kamis		03:01 - 06:59, 11:01 - 16:59
+  Jumat		03:01 - 16:59
+  Sabtu		03:01 - 23:59
+  
+  Penggabungan jadwal yang tidak diperbolehkan
+  acl AVAILABLE_WORKING_1 time S 00:00-23:59
+  acl AVAILABLE_WORKING_2 time MT 00:00-06:59
+  acl AVAILABLE_WORKING_3 time M 11:01-23:59
+  acl AVAILABLE_WORKING_4 time TWH 11:01-16:59
+  acl AVAILABLE_WORKING_5 time WH 03:01-06:59
+  acl AVAILABLE_WORKING_6 time F 03:01-16:59
+  acl AVAILABLE_WORKING_7 time A 03:01-23:59
   ```
 - Buat file baru bernama `acl.conf` di folder squid.
 
@@ -371,15 +390,31 @@ Transaksi jual beli tidak dilakukan setiap hari, oleh karena itu akses internet 
   ```
 - Edit file `/etc/squid/acl.conf` seperti pada gambar berikut:
 
-  ![10-01](https://user-images.githubusercontent.com/31863229/140803916-825ec305-e62b-4513-a967-0d856884c78c.PNG)
+  ![10-01](https://user-images.githubusercontent.com/31863229/140914095-e687b1e5-3ba5-4644-9140-4b987203551d.PNG)
 - Edit file `/etc/squid/squid.conf` seperti pada gambar berikut:
 
-  ![10-02](https://user-images.githubusercontent.com/31863229/140803919-c9f52b4b-4d77-4869-9a26-a6494f4f624e.PNG)
+  ![10-02](https://user-images.githubusercontent.com/31863229/140914106-0cdcff4f-dff5-430f-b8c7-248c9e5f94c5.PNG)
 - Restart squid.
 
   ```
   service squid restart
   ```
+
+**Pada Loguetown**
+- Ubah tanggal dan waktu sesuai jadwal yang tidak diperbolehkan, misal hari Selasa pukul 13.00.
+  ```
+  date -s "9 NOV 2021 13:00:00"
+  ```
+- Buka `http://its.ac.id` menggunakan lynx.
+
+  ![10-03](https://user-images.githubusercontent.com/31863229/140914109-21b2f6ca-9eea-4c34-928d-d891345dd82d.PNG)
+- Ubah tanggal dan waktu sesuai jadwal yang diperbolehkan, misal hari Rabu pukul 01.00.
+  ```
+  date -s "10 NOV 2021 01:00:00"
+  ```
+- Buka `http://its.ac.id` menggunakan lynx.
+
+  ![08-02](https://user-images.githubusercontent.com/31863229/140910444-3451d55c-9fa1-4192-815f-dfd53a7dc38a.PNG)
 
 ## Soal 11
 Agar transaksi bisa lebih fokus berjalan, maka dilakukan redirect website agar mudah mengingat website transaksi jual beli kapal. Setiap mengakses `google.com`, akan diredirect menuju `super.franky.yyy.com` dengan website yang sama pada soal shift modul 2. Web server `super.franky.yyy.com` berada pada node Skypie.

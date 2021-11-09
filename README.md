@@ -517,24 +517,24 @@ Saatnya berlayar! Luffy dan Zoro akhirnya memutuskan untuk berlayar untuk mencar
   ```
 
 **Pada Loguetown**
-- Buka `super.franky.B09.com/public/images/franky.png` menggunakan lynx dengan akun Luffy.
+- Buka `super.franky.B09.com` menggunakan lynx dengan akun Luffy dan coba download file `background-frank.jpg`. Dapat dilihat ada delay bandwidth.
 
-  ![12-03](https://user-images.githubusercontent.com/31863229/140919473-afdb9a3a-a998-4d57-a198-f33c6ee02839.PNG)
+  ![12-03](https://user-images.githubusercontent.com/31863229/140922141-a1a0e860-33bf-43e9-acb4-a7f8523cca4e.PNG)
 
 ## Soal 13
 Sedangkan, Zoro yang sangat bersemangat untuk mencari harta karun, sehingga kecepatan kapal Zoro tidak dibatasi ketika sudah mendapatkan harta yang diinginkannya.
 
 ### Jawaban
 **Pada Loguetown**
-- Buka `super.franky.B09.com/public/images/stockphotorandomfran.woi` menggunakan lynx dengan akun Zoro.
+- Buka `super.franky.B09.com` menggunakan lynx dengan akun Zoro dan coba download file `autocomplete.js.gz`. Dapat dilihat tidak ada delay bandwidth.
 
-  ![13-01](https://user-images.githubusercontent.com/31863229/140919478-3ed92eb2-482f-4081-b05d-61f9384257e7.PNG)
+  ![13-01](https://user-images.githubusercontent.com/31863229/140922496-31f09917-47d5-4c3a-a3e8-f59cd8486761.PNG)
 
 ## Kendala
 1. Sedikit kesulitan mengenai DHCP Relay pada soal 2 karena tidak ada di modul.
 2. Sedikit kesulitan pada soal 8 karena hasil lynx tidak dapat tampil. Solusinya menambahkan IP EniesLobby pada file `/etc/resolv.conf` di Water7.
 3. Sedikit kesulitan pada soal 10 untuk mengecek pembatasan waktu akses.
-4. Kesulitan pada soal 12 dan 13 karena tidak dapat mengecek limitasi bandwidth.
+4. Sedikit kesulitan pada soal 12 dan 13 dalam pengecekan delay bandwidth.
 
 ## Pembagian Tugas
 |Nama                   |Soal  |

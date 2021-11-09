@@ -238,9 +238,9 @@ Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch1 
 **Pada Jipangu**
 - Edit file `/etc/dhcp/dhcpd.conf` pada bagian `default-lease-time` dan `max-lease-time` seperti pada gambar berikut:
 
-  ![03-02](https://user-images.githubusercontent.com/31863229/140718533-b0a3deb9-19de-4184-a776-16f855ec137e.PNG)
+  ![03-02](https://user-images.githubusercontent.com/31863229/140905888-4ff3871a-d81c-46c7-82c1-20177952a5e8.PNG)
   
-  ![04-01](https://user-images.githubusercontent.com/31863229/140719944-b74abd60-5460-4bda-b167-4ab563e29a8a.PNG)
+  ![04-01](https://user-images.githubusercontent.com/31863229/140906280-9ca9166d-bdac-430c-9657-ec2f6eb80e33.PNG)
 - Restart isc-dhcp-server.
 
   ```
@@ -254,7 +254,7 @@ Luffy dan Zoro berencana menjadikan Skypie sebagai server untuk jual beli kapal 
 **Pada Jipangu**
 - Edit file `/etc/dhcp/dhcpd.conf` seperti pada gambar berikut:
   
-  ![04-01](https://user-images.githubusercontent.com/31863229/140719944-b74abd60-5460-4bda-b167-4ab563e29a8a.PNG)
+  ![04-01](https://user-images.githubusercontent.com/31863229/140906280-9ca9166d-bdac-430c-9657-ec2f6eb80e33.PNG)
 - Restart isc-dhcp-server.
 
   ```
@@ -268,7 +268,7 @@ Luffy dan Zoro berencana menjadikan Skypie sebagai server untuk jual beli kapal 
 - Restart Skypie dengan klik stop dan start pada node Skypie.
 - Lakukan testing pada IP dan nameserver.
 
-  ![07-02](https://user-images.githubusercontent.com/31863229/140727166-a97b3d0a-8226-4eec-8d6b-c50bbdf4102d.PNG)
+  ![07-02](https://user-images.githubusercontent.com/31863229/140907284-7eeca7ab-b260-4e7a-bd2d-37a81c86d998.PNG)
 
 ## Soal 8
 Pada Loguetown, proxy harus bisa diakses dengan nama `jualbelikapal.yyy.com` dengan port yang digunakan adalah 5000.

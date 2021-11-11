@@ -537,8 +537,8 @@ Sedangkan, Zoro yang sangat bersemangat untuk mencari harta karun, sehingga kece
 4. Sedikit kesulitan pada soal 12 dan 13 dalam pengecekan delay bandwidth.
 
 ## Pembagian Tugas
-|Nama                   |Soal  |
-|:---------------------:|:----:|
-|Maximilian H M Lingga  ||
-|Izzulhaq Fawwaz Syauqiy||
-|Aldo Yaputra Hartono   ||
+|Nama                   |Soal   |
+|:---------------------:|:-----:|
+|Aldo Yaputra Hartono   |1 - 7  |
+|Maximilian H M Lingga  |8 - 10 |
+|Izzulhaq Fawwaz Syauqiy|11 - 13|
